@@ -1,16 +1,24 @@
-﻿@model IEnumerable<AspNetCoreMVC.Models.EmployeeView>
+﻿
 @{
-   ViewBag.Title = "Home";
+    ViewData["Title"] = "Index";
 }
 
-<table class="table table-dark table-striped">
-   @foreach (var item in Model)
-   {
-      <tr>
-         <td>Имя: @item.Name</td>
-         <td>Фамилия: @item.Surname</td>
-         <td><a asp-action="ViewModel" asp-route-id="@item.id">Подробно</a> </td>
-      </tr>
-   }
-</table>
+@section Slider{
+    @await Html.PartialAsync("_Slider")
+}
 
+<div class="row">
+
+    @await Html.PartialAsync("_LeftSideBar")
+
+    <div class="col-sm-9 padding-right">
+
+        @await Html.PartialAsync("_FeaturesItems")
+
+        @await Html.PartialAsync("_CategoryTab")
+
+        @await Html.PartialAsync("_RecommendedItems")
+
+    </div>
+
+</div>

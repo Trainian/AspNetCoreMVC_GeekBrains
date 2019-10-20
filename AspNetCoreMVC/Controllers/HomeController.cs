@@ -9,35 +9,44 @@ namespace AspNetCoreMVC.Controllers
 {
    public class HomeController : Controller
    {
-         public static List<EmployeeView> _employees = new List<EmployeeView>
-         {
-            new EmployeeView
-            {
-               id = 1,
-               Name = "Дмитрий",
-               Surname = "Горбовский",
-               Patronymic = "Владмирович",
-               BirthDate = new DateTime(1991,03,28)
-            },
-            new EmployeeView
-            {
-               id = 2,
-               Name = "Алина",
-               Surname = "Котар",
-               Patronymic = "Сергеевна",
-               BirthDate = new DateTime(1994,07,22)
-            }
-         };
         public IActionResult Index()
         {
-            return View(_employees);
+            return View();
         }
-        public IActionResult ViewModel(int id)
+
+        public IActionResult Checkout ()
         {
-            var employee = _employees.FirstOrDefault(t => t.id == id);
-            if (ReferenceEquals(employee, null))
-               return NotFound();
-            return View(employee);
+            return View();
+        }
+
+        public IActionResult Cart ()
+        {
+            return View();
+        }
+
+        public IActionResult Login ()
+        {
+            return View();
+        }
+
+        public IActionResult Blog_List ()
+        {
+            return View();
+        }
+
+        public IActionResult Blog_Single ()
+        {
+            return View();
+        }
+
+        public IActionResult Contact ()
+        {
+            return View();
+        }
+
+        public IActionResult Error ()
+        {
+            return View();
         }
    }
 }

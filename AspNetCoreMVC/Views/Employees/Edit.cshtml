@@ -1,0 +1,72 @@
+﻿@model AspNetCoreMVC.Models.EmployeeView
+
+@{
+    ViewData["Title"] = "Редактирование сотрудника";
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label"></label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Patronymic" class="control-label"></label>
+                <input asp-for="Patronymic" class="form-control" />
+                <span asp-validation-for="Patronymic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input type="date" asp-for="BirthDate" class="form-control"/>
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Users">Back to List</a>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        if (!Modernizr.inputtypes.date) {
+            $(function () {
+                $("input[type='date']")
+                    .datepicker({ dateFormat: 'dd/mm/yy' })
+                    .get(0).setAttribute("type", "text");
+            });
+            $.datepicker.regional['ru'] = {
+                closeText: 'Закрыть',
+                prevText: 'Пред',
+                nextText: 'След',
+                currentText: 'Сегодня',
+                monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+                    'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн',
+                    'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+                dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
+                dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
+                dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                weekHeader: 'Не',
+                dateFormat: 'dd.mm.yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''
+            };
+            $.datepicker.setDefaults($.datepicker.regional['ru']);
+
+        }
+    });
+</script>
