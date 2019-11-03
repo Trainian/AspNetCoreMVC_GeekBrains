@@ -31,7 +31,7 @@ namespace AspNetCoreMVC.ViewComponents
                 Id = x.Id,
                 Name = x.Name,
                 Order = x.Order,
-                ProductsCount = 0
+                ProductsCount = _productData.GetProductCount(x.Id)
             }).OrderBy(b => b.Order).ToList();
         }
     }

@@ -32,5 +32,7 @@ namespace AspNetCoreMVC.Infrastructure.Interfaces
         /// <returns></returns>
         IEnumerable<Product> GetProducts(ProductFilter filter);
 
+        int GetProductCount(int brandId);
+
     }
 }

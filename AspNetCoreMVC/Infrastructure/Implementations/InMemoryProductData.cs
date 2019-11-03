@@ -407,7 +407,6 @@ namespace AspNetCoreMVC.Infrastructure.Implementations
 
         public IEnumerable<Brand> GetBrands()
         {
-
             return _brands;
         }
 
@@ -419,6 +418,11 @@ namespace AspNetCoreMVC.Infrastructure.Implementations
             if (filter.BrandId.HasValue)
                 products = products.Where(p => p.BrandId.HasValue && p.BrandId.Value.Equals(filter.BrandId.Value)).ToList();
             return products;
+        }
+
+        public int GetProductCount(int brandId)
+        {
+            return _products.Count(x => x.BrandId == brandId);
         }
     }
 }
