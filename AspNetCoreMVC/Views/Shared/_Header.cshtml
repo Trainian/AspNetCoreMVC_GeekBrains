@@ -92,11 +92,11 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a asp-action="Index" class="active">Home</a></li>
+                            <li><a asp-controller="Home" asp-action="Index" class="active">Home</a></li>
                             <li class="dropdown">
-                                <a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                                <a href="#">Магазин<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a asp-action="Products">Products</a></li>
+                                    <li><a asp-controller="Catalog" asp-action="Shop">Products</a></li>
                                     <li><a asp-action="Product_Details">Product Details</a></li>
                                     <li><a asp-action="Checkout">Checkout</a></li>
                                     <li><a asp-action="Cart">Cart</a></li>

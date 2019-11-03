@@ -12,9 +12,7 @@ namespace AspNetCoreMVC.Models
         /// <summary>
         /// Количество товаров бренда
         /// </summary>
-
         public int ProductsCount { get; set; }
-
-        public BrandViewModel BrandSection { get; set; }
+        
     }
 }
